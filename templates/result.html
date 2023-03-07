@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lightbox.css') }}"> 
+</head>
+<body>
+<div class="container">
+    
+        {% for i in range(x) %}
+        <div class="gallery">
+        <a href={{movieimage[i]}} data-lightbox="models" data-title={{moviename[i]}}>
+            <img src={{movieimage[i]}} alt='error' height="400">MOVIE NAME = {{moviename[i]}}<br>IMDB RATINGS = {{movierating[i]}}  
+        </a>
+        </div>
+        {% endfor %}
+    
+</div>
+</body>
+<script src="{{ url_for('static', filename='lightbox-plus-jquery.js') }}"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

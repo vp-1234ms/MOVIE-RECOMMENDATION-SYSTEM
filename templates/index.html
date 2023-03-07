@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+<header>
+    <a href="#" class="logo">Movie Lovers</a>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+    <nav class="navbar">
+        <ul>
+            <form method="POST" action="/result">
+            <li><a href="#">Select Genere +</a>
+                <ul>
+                    <form method="POST" action="/hi">
+                        {% for i in range(x) %}
+                            <li><input type="checkbox" name="mycheckbox1" value={{genre[i]}}>&nbsp;&nbsp;&nbsp;{{genre[i]}}</li>
+                        {% endfor %}
+                </ul>
+            </li>
+            <li><a href="#">Select Year +</a>
+                <ul>
+                    <form method="POST" action="/hi">
+                        {% for i in range(y) %}
+                            <li><input type="checkbox" name="mycheckbox2" value={{year[i]}}>&nbsp;&nbsp;&nbsp;{{year[i]}}</li>
+                        {% endfor %}
+                </ul>
+            </li>
+            <li><a href="#">Select Certification +</a>
+                <ul>
+                    <form method="POST" action="/hi">
+                        {% for i in range(z) %}
+                            <li><input type="checkbox" name="mycheckbox3" value={{certification[i]}}>&nbsp;&nbsp;&nbsp;{{certification[i]}}</li>
+                        {% endfor %}
+                </ul>
+            </li>
+            <li><a href="#">Submit +</a>
+                <ul>
+                <input type='submit' class="task">
+                <ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+</body>
+</html>
+
+
+ 
