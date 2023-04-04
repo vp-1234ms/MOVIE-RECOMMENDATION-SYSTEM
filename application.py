@@ -1,4 +1,5 @@
-from flask import Flask,request,render_template,redirect
+from flask import Flask, request, app,render_template,redirect
+from flask import Response
 import pandas as pd
 import re
 from flask_cors import CORS,cross_origin
@@ -7,7 +8,7 @@ app=application
 @app.route("/",methods=["GET","POST"])
 @cross_origin()
 def start():
-     data=pd.read_csv('./MOVIE-RECOMMENDATION-SYSTEM/Final.csv')
+     data=pd.read_csv('Final.csv')
      l=data['genre'].to_list()
      h=[]
      for i in l:
@@ -60,7 +61,7 @@ def home():
           print(movie_genre)
           print(movieyear)
           print(movie_certification)
-          data=pd.read_csv('./MOVIE-RECOMMENDATION-SYSTEM/Final.csv')
+          data=pd.read_csv('Final.csv')
           data=data[data['genre'].str.contains('|'.join(movie_genre))]
           if(len(movieyear)!=0):
                data=data[data['year'].str.contains('|'.join(movieyear))]
